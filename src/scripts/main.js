@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!link) {
       return;
     }
-    bigPicture.src = link;
-    bigPicture.alt = link.title || 'main image';
+    bigPicture.src = link.href;
+
+    const thumbImg = link.querySelector('img');
+
+    bigPicture.alt = thumbImg?.alt || 'main image';
   });
 });
